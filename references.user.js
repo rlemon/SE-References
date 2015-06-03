@@ -17,12 +17,14 @@
 // @include *://mathoverflow.net/*
 // ==/UserScript==
 
-var script = document.createElement("script");
-script.type = "text/javascript";
-script.textContent = "(" + reference_maker.toString() + ")(jQuery)";
-document.body.appendChild(script);
+function with_jquery(f) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.textContent = "(" + f.toString() + ")(jQuery)";
+    document.body.appendChild(script);
+}
 
-function reference_maker() {
+with_jquery(function($) {
 
     answer_button = $("#show-editor-button>input");
 
@@ -45,7 +47,13 @@ function reference_maker() {
         reference_button = $("#wmd-reference-button");
         reference_button.css({"left":String(pos_left) + "px"});
         reference_span = $("#wmd-reference-button>span");
-        reference_span.css({"background-image":"url(http://i.imgur.com/5o7ppTp.png)", "margin-top":"3px", "margin-left":"1px"});
+        reference_span.css({"background-image":"url(http://i.imgur.com/17WbhDj.png)", "margin-top":"3px", "margin-left":"2px"});
+        reference_span.on("mouseover", function() {
+            reference_span.css({"background-image":"url(http://i.imgur.com/yipjCON.png)"});
+        });
+        reference_span.on("mouseout", function() {
+            reference_span.css({"background-image":"url(http://i.imgur.com/17WbhDj.png)"});
+        });
         $("#wmd-olist-button").css({'left':String(pos_left+35)+"px"});
         $("#wmd-ulist-button").css({'left':String(pos_left+60)+"px"});
         $("#wmd-heading-button").css({'left':String(pos_left+85)+"px"});
@@ -101,4 +109,4 @@ function reference_maker() {
         });
 
     }
-}
+});
