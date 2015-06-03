@@ -47,12 +47,12 @@ with_jquery(function($) {
         reference_button = $("#wmd-reference-button");
         reference_button.css({"left":String(pos_left) + "px"});
         reference_span = $("#wmd-reference-button>span");
-        reference_span.css({"background-image":"url(http://i.imgur.com/17WbhDj.png)", "margin-top":"3px", "margin-left":"2px"});
+        reference_span.css({"background-image":"url(http://i.imgur.com/QWgycXJ.png)", "margin-top":"2px", "margin-left":"2px"});
         reference_span.on("mouseover", function() {
-            reference_span.css({"background-image":"url(http://i.imgur.com/yipjCON.png)"});
+            reference_span.css({"background-image":"url(http://i.imgur.com/so4eC8R.png)"});
         });
         reference_span.on("mouseout", function() {
-            reference_span.css({"background-image":"url(http://i.imgur.com/17WbhDj.png)"});
+            reference_span.css({"background-image":"url(http://i.imgur.com/QWgycXJ.png)"});
         });
         $("#wmd-olist-button").css({'left':String(pos_left+35)+"px"});
         $("#wmd-ulist-button").css({'left':String(pos_left+60)+"px"});
