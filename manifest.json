@@ -1,0 +1,20 @@
+{
+	"name": "SE References",
+	"description": "",
+	"version": "0.0.0.1",
+	"manifest_version": 2,
+	"content_scripts": [
+		{
+			"matches" : ["*://chat.stackoverflow.com/*","*://chat.stackexchange.com/*","*://chat.meta.stackexchange.com/*"], // expand as you had it before.
+			"js": ["references.js"] /*,
+			"css": ["style.css"]*/
+		}
+	],
+	"icons": {
+		"128": "reference_icon_black.svg" // include other sizes as well
+	}/*,
+	"options_ui": {
+		"page": "options.html",
+		"chrome_style": true
+	}
+}
